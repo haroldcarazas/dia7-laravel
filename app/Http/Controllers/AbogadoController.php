@@ -14,7 +14,8 @@ class AbogadoController extends Controller
      */
     public function index()
     {
-        //
+        $data = Abogado::all();
+        return view('abogados.index', ["abogados" => $data]);
     }
 
     /**
@@ -80,8 +81,11 @@ class AbogadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Abogado $abogado)
+    public function destroy(Request $request)
     {
-        //
+        $abogado = Abogado::find($request->abogado_id);
+        $abogado->delete();
+
+        return redirect()->route('abogados-index')->with('success', 'Abogado eliminado correctamente');
     }
 }

@@ -8,10 +8,10 @@
             <a href="#">Home</a>
         </li>
         <li class="p-3 hover:bg-blue-600">
-            <a href="#">Detalle</a>
+            <a href="{{ route('abogados-index') }}">Detalle</a>
         </li>
         <li class="p-3 hover:bg-blue-600">
-            <a href="#">Crear</a>
+            <a href="{{ route('abogados-create') }}">Crear</a>
         </li>
     </ul>
 

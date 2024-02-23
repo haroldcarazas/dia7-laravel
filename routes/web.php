@@ -18,5 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/abogados', [AbogadoController::class, 'index'])->name('abogados-index');
 Route::get('/abogados/create', [AbogadoController::class, 'create'])->name('abogados-create');
 Route::post('/abogados/store', [AbogadoController::class, 'store'])->name('abogados-store');
+Route::delete('/abogados/delete', [AbogadoController::class, 'destroy'])->name('abogados-delete');
